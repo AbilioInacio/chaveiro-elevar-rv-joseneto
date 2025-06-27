@@ -14,12 +14,10 @@ body {
 .video-fundo {
   overflow: hidden;
   position: fixed;
-  top: 0;
-  left: 0;
   width: auto;
   height: 110%;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .logo {
@@ -41,7 +39,7 @@ h2 {
 
 .split {
   position: fixed;
-  top: 15vh;
+  bottom: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,19 +61,35 @@ button {
 }
 
 .btn1 {
-  background-color: #70b62c;
-  color: #3b72b8;
+  background-color: #f07128;
+  color: #191919;
 }
 
 .btn2 {
-  background-color: #3b72b8;
-  color: #70b62c;
+  background-color: #191919;
+  color: #f07128;
+}
+
+.empresas-logo {
+  width: 95vw;
+  position: fixed;
+  bottom: 5vh;
+  opacity: 0;
+  animation: aparece 2s ease-in-out forwards 1s;
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  font-size: 0.8rem;
+  opacity: 0;
+  animation: aparece-credit 2s ease-in-out forwards 1s;
 }
 
 @keyframes shrink-and-move {
   /* Removed the delay from the animation definition */
   to {
-    width: 30vw; /* Adjust final width as needed */
+    width: 80vw; /* Adjust final width as needed */
     height: auto;
     top: 20px; /* Adjust final top position as needed */
     left: 20px; /* Adjust final left position as needed */
@@ -93,64 +107,82 @@ button {
   }
 }
 
-@media (min-width: 915px) { /*tablet*/
-  .video-fundo{
-      overflow: hidden;
-      position: fixed;
-      top: -130vh;
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: -1;
-      opacity: 0.5;
+@keyframes aparece {
+  /* Removed the delay from the animation definition */
+  to {
+    transition: opacity 0.5 3s ease-in-out 2s, transform 3s ease-in-out 2s; /* 2s delay before fading/sliding in */
+    opacity: 1;
+  }
+}
+
+@keyframes aparece-credit {
+  /* Removed the delay from the animation definition */
+  to {
+    transition: opacity 0.5 3s ease-in-out 2s, transform 3s ease-in-out 2s; /* 2s delay before fading/sliding in */
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 915px) {
+  /*tablet*/
+  .video-fundo {
+    overflow: hidden;
+    position: fixed;
+    top: -130vh;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.5;
   }
 
-  .logo{
-      top: 0;
-      left: 40vh;
-      width: 55vw;
-      height: auto;
+  .logo {
+    top: 0;
+    left: 40vh;
+    width: 55vw;
+    height: auto;
   }
 
   .split {
-      top: 5vw;
+    top: 5vw;
     margin-left: 35vw;
   }
 
   button {
-      left: 40vw;
-      width: 100%;
-      height: 60px; /* Occupy roughly 2/3 of the height */
+    left: 40vw;
+    width: 100%;
+    height: 60px; /* Occupy roughly 2/3 of the height */
   }
 }
 
-@media (min-width: 1200px) {    /*Computador*/
-  .video-fundo{
-      overflow: hidden;
-      position: fixed;
-      top: -150vh;
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: -1;
-      opacity: 0.5;
+@media (min-width: 1200px) {
+  /*Computador*/
+  .video-fundo {
+    overflow: hidden;
+    position: fixed;
+    top: -150vh;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.5;
   }
 
-  .logo{
-      top: 0;
-      left: 40vh;
-      width: 55vw;
-      height: auto;
+  .logo {
+    top: 0;
+    left: 40vh;
+    width: 55vw;
+    height: auto;
   }
 
   .split {
-      top: 8vw;
+    top: 8vw;
     margin-left: 30vw;
   }
 
   button {
-      left: 40vw;
-      width: 100%;
-      height: 60px; /* Occupy roughly 2/3 of the height */
-  }  
+    left: 40vw;
+    width: 100%;
+    height: 60px; /* Occupy roughly 2/3 of the height */
+  }
 }
